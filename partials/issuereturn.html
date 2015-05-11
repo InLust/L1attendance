@@ -1,0 +1,190 @@
+<md-toolbar>
+      <h2 class="md-toolbar-tools md-accent">
+        <span>Issue/Return</span>
+      </h2>
+    </md-toolbar>
+<form name="issueReturnForm" >
+<div layout="row" layout-align="spaced-between center">
+<div>
+<md-card>
+      <md-card-content>
+        <h2>Issue/Return</h2>
+        <p>Selected Value: <span class="radioValue">{{ transaction.type }}</span> </p>
+    <md-radio-group ng-model="transaction.type">
+      <md-radio-button value="Issue" aria-label="Label 1">Issue</md-radio-button>
+      <md-radio-button value="Return"> Return </md-radio-button>
+    </md-radio-group>
+      </md-card-content>
+    </md-card>
+    <md-card>
+      <md-card-content>
+        <h2>Member Type</h2>
+    <p>Selected Value: <span class="radioValue">{{ transaction.memberType }}</span> </p>
+    <md-radio-group ng-model="transaction.memberType">
+      <md-radio-button value="Staff" aria-label="Label 1">Staff</md-radio-button>
+      <md-radio-button value="Student"> Student </md-radio-button>
+    </md-radio-group>
+      </md-card-content>
+    </md-card>
+</div>
+<div ng-show="transaction.memberType=='Student'">
+<md-card>
+	<md-card-content>
+	 <h2>Member Details</h2>
+	<md-input-container flex>
+        <label> Roll No.</label>
+        <input ng-model="user.id" placeholder="Enter Student Roll Number">
+      </md-input-container>
+      <div layout layout-sm="column">
+        <md-input-container flex>
+          <label>Name</label>
+          <input ng-model="user.name" disabled >
+        </md-input-container>
+        <md-input-container flex>
+          <label>Class</label>
+          <input ng-model="user.class" disabled>
+        </md-input-container>
+      </div>
+      <md-input-container flex>
+        <label>Balance</label>
+        <input ng-model="user.balance" disabled>
+      </md-input-container>
+	</md-card-content>
+</md-card>
+</div>
+<div ng-show="transaction.memberType=='Staff'">
+<md-card>
+	<md-card-content>
+	<h2>Member Details</h2>
+	<md-input-container flex>
+        <label> Employee No. </label>
+        <input ng-model="user.id" placeholder="Enter Employee ID">
+      </md-input-container>
+        <md-input-container flex>
+          <label>Name</label>
+          <input ng-model="user.name" disabled >
+        </md-input-container>
+        <md-input-container flex>
+          <label>Designation</label>
+          <input ng-model="user.designation" disabled>
+        </md-input-container>
+        <md-input-container flex>
+          <label>Department</label>
+          <input ng-model="user.department" disabled>
+        </md-input-container>
+      <md-input-container flex>
+        <label>Balance</label>
+        <input ng-model="user.balance" disabled>
+      </md-input-container>
+	</md-card-content>
+</md-card>
+</div>
+<div>
+<md-card>
+	<md-card-content>
+	<h2>Book Details</h2>
+	<md-input-container flex>
+        <label> Accession No. </label>
+        <input ng-model="book.id" placeholder="Enter Book Accession No.">
+      </md-input-container>
+        <md-input-container flex>
+          <label>Title</label>
+          <input ng-model="book.title" disabled >
+        </md-input-container>
+        <md-input-container flex>
+          <label>Author</label>
+          <input ng-model="book.author" disabled>
+        </md-input-container>
+        <div layout layout-sm="column">
+        <md-input-container flex>
+          <label>Value</label>
+          <input ng-model="book.value" disabled>
+        </md-input-container>
+      <md-input-container flex>
+        <label>Call No</label>
+        <input ng-model="book.callno" disabled>
+      </md-input-container>
+      </div>
+	</md-card-content>
+</md-card>
+</div>
+</div>
+<div layout="row">
+<div>
+<md-card>
+	<md-card-content>
+	<h2>Data/Time/Fine</h2>
+	<div layout layout-sm="column">
+	<md-input-container flex>
+        <label>Issue Date </label>
+        <input type="date"  ng-model="transaction.issue.issuedate">
+      </md-input-container>
+      <md-input-container flex>
+        <label>Issue Time </label>
+        <input ng-model="transaction.issue.issuetime" >
+      </md-input-container>
+      </div>
+      <label>Issue Period</label>
+        <md-input-container flex>
+          <select ng-options="issuePeriod.label for issuePeriod in issuePeriods track by issuePeriod" ng-model="transaction.issue.issueperiod" >
+          </select>
+        </md-input-container>
+        <div layout layout-sm="column">
+        <md-input-container flex>
+          <label>Due Date</label>
+          <input type="date" ng-model="transaction.issue.duedate" >
+        </md-input-container>
+        <md-input-container flex>
+          <label>Logical Due Date</label>
+          <input type="date" ng-model="transaction.issue.logicalduedate" >
+        </md-input-container>
+        </div>
+        <div layout layout-sm="column">
+        <md-input-container flex>
+          <label>Return Date</label>
+          <input type="date" ng-model="transaction.issue.returndate" disabled>
+        </md-input-container>
+      <md-input-container flex>
+        <label>Return Time</label>
+        <input ng-model="transaction.issue.returntime" disabled>
+      </md-input-container>
+      </div>
+       <div layout layout-sm="column">
+        <md-input-container flex>
+          <label>Fine</label>
+          <input ng-model="transaction.issue.fine" disabled>
+        </md-input-container>
+      <md-input-container flex>
+        <label>Deposited</label>
+        <input ng-model="transaction.issue.findeposited" disabled>
+      </md-input-container>
+      </div>
+      <md-input-container>
+		  <label>Remarks</label>
+		  <textarea ng-model="transaction.issue.remarks" md-maxlength="200"></textarea>
+		</md-input-container>
+	</md-card-content>
+</md-card>
+</div>
+</div>
+ <div layout="row">
+ <md-card>
+ 	<md-card-content>
+ 	<h2>Member's Log Of Books Issued/Returned</h2>
+ 	<table>
+ 		<thead>
+ 		<tr>
+ 		<th>Accession No.</th>
+ 		<th>Issue Date</th>
+ 		<th>Title</th>
+ 		<th>Return Date</th>
+ 		<th>Action</th>
+ 		</tr>
+ 		</thead>
+ 		<tbody>
+ 		</tbody>
+ 	</table>
+ 	</md-card-content>
+ </md-card>
+ </div>
+</form>

@@ -1,0 +1,50 @@
+<html lang="en">
+  <head>
+    <link rel="stylesheet" href="//ajax.googleapis.com/ajax/libs/angular_material/0.7.1/angular-material.min.css">
+    <link rel="stylesheet" href="css/style.css">
+  </head>
+  <body ng-app="attendanceApp" layout="column" >
+    <md-toolbar class="toolbar-green" layout="row" ng-controller="AppCtrl">
+      <button ng-click="toggleSidenav('left')" hide-gt-sm class="menuBtn">
+        <span class="visuallyhidden">Menu</span>
+      </button>
+      <div layout="row" flex>
+      <div flex flex-order="1"><h1 class="md-toolbar-tools">{{moduleTitle}}</h1></div>
+      <div flex flex-order="2"> <h1  class="md-toolbar-tools">{{collegeName}}</h1></div>
+      </div>
+    </md-toolbar>
+    <div layout="row" flex>
+        <md-sidenav layout="column" class="md-sidenav-left md-whiteframe-z2" md-component-id="left" md-is-locked-open="$media('gt-sm')">
+        <md-list ng-controller="AppCtrl">
+			  <md-item ng-repeat="item in menuItems">
+			    <md-item-content>
+			      <md-button ng-href="{{item.url}}">{{item.title}}</md-button>
+			    </md-item-content>
+			  </md-item>
+		</md-list>
+        </md-sidenav>
+        <div layout="column" flex id="content">
+            <md-content layout="column" flex class="md-padding">
+              <div ng-view></div>
+            </md-content>
+        </div>
+    </div>
+    <!-- Angular Material Dependencies -->
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.3.6/angular.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.3.6/angular-animate.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.3.6/angular-aria.min.js"></script>
+	<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.3.6/angular-route.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angular_material/0.7.1/angular-material.min.js"></script>
+    <script src="app.js"></script>
+     <script src="services/utilservice.js"></script>
+     <script src="controllers/issuereturn.js"></script>
+     <script src="controllers/bookstatus.js"></script>
+     <script src="controllers/issueperiod.js"></script>
+     <script src="controllers/studententry.js"></script>
+     <script src="controllers/accessregister.js"></script>
+     <script src="controllers/language.js"></script>
+     <script src="controllers/place.js"></script>
+    <script src="controllers/booktype.js"></script>
+    <script src="controllers/othermembercontroller.js"></script>
+  </body>
+</html>

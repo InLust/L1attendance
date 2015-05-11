@@ -1,0 +1,148 @@
+@CHARSET "UTF-8";
+.icon-small{
+	width: 16px !important;
+	height: 16px !important;
+	}
+	
+	.icon-medium{
+	width: 24px !important;
+	height: 24px !important;
+	}
+
+.button-small{
+	width: 36px !important;
+	height: 36px !important;
+	}
+.button-medium{
+	width: 42px !important;
+	height: 42px !important;
+	}
+.menuBtn {
+  background-color: transparent;
+  border: none;
+  height: 38px;
+  margin: 16px;
+  position: absolute;
+  width: 36px;
+}
+
+.toolbar-green{
+	background-color:#009688 !important;	
+}
+md-toolbar h1 {
+  font-size: 1.250em;
+  font-weight: 400;
+  margin: auto;
+}
+md-list .md-button {
+  color: inherit;
+  font-weight: 500;
+  text-align: left;
+  width: 100%;
+}
+.visuallyhidden {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0; 
+  position: absolute;
+  width: 1px;
+}
+
+/* Using Data-URI converted from svg until <md-icon> becomes available 
+https://github.com/google/material-design-icons
+*/
+.menuBtn {
+  background: transparent url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB2ZXJzaW9uPSIxLjEiIHg9IjBweCIgeT0iMHB4IiB3aWR0aD0iMjRweCIgaGVpZ2h0PSIyNHB4IiB2aWV3Qm94PSIwIDAgMjQgMjQiIGVuYWJsZS1iYWNrZ3JvdW5kPSJuZXcgMCAwIDI0IDI0IiB4bWw6c3BhY2U9InByZXNlcnZlIj4KPGcgaWQ9IkhlYWRlciI+CiAgICA8Zz4KICAgICAgICA8cmVjdCB4PSItNjE4IiB5PSItMjIzMiIgZmlsbD0ibm9uZSIgd2lkdGg9IjE0MDAiIGhlaWdodD0iMzYwMCIvPgogICAgPC9nPgo8L2c+CjxnIGlkPSJMYWJlbCI+CjwvZz4KPGcgaWQ9Ikljb24iPgogICAgPGc+CiAgICAgICAgPHJlY3QgZmlsbD0ibm9uZSIgd2lkdGg9IjI0IiBoZWlnaHQ9IjI0Ii8+CiAgICAgICAgPHBhdGggZD0iTTMsMThoMTh2LTJIM1YxOHogTTMsMTNoMTh2LTJIM1YxM3ogTTMsNnYyaDE4VjZIM3oiIHN0eWxlPSJmaWxsOiNmM2YzZjM7Ii8+CiAgICA8L2c+CjwvZz4KPGcgaWQ9IkdyaWQiIGRpc3BsYXk9Im5vbmUiPgogICAgPGcgZGlzcGxheT0iaW5saW5lIj4KICAgIDwvZz4KPC9nPgo8L3N2Zz4=) no-repeat  center center;
+}
+
+.buttondemoBasicUsage {
+  /** From vulcanized demo **/ }
+  .buttondemoBasicUsage section {
+    background: #f7f7f7;
+    border-radius: 3px;
+    text-align: center;
+    margin: 1em;
+    position: relative !important;
+    padding-bottom: 10px; }
+  .buttondemoBasicUsage md-content {
+    margin-right: 7px; }
+  .buttondemoBasicUsage section .md-button:not(.md-fab) {
+    min-width: 10em; }
+  .buttondemoBasicUsage section .md-button {
+    display: block;
+    margin: 1em;
+    line-height: 25px; }
+  .buttondemoBasicUsage .label {
+    position: absolute;
+    bottom: 5px;
+    left: 7px;
+    color: #ccc;
+    font-size: 14px; }
+    
+    
+    .tooltipdemoBasicUsage md-toolbar .md-toolbar-tools .md-button, .tooltipdemoBasicUsage md-toolbar .md-toolbar-tools .md-button:hover {
+  box-shadow: none;
+  border: none;
+  transform: none;
+  -webkit-transform: none; }
+.tooltipdemoBasicUsage .left {
+  top: 70px !important;
+  left: 56px !important; }
+.tooltipdemoBasicUsage .right {
+  top: 70px !important;
+  right: 56px !important; }
+  
+  
+  .dialogdemoBasicUsage .full {
+  width: 100%;
+  height: 100%; }
+.dialogdemoBasicUsage .gap {
+  width: 50px; }
+.dialogdemoBasicUsage .md-subheader {
+  background-color: #dcedc8;
+  margin: 0px; }
+.dialogdemoBasicUsage h2.md-subheader {
+  margin: 0px;
+  margin-left: -24px;
+  margin-right: -24px;
+  margin-top: -24px; }
+.dialogdemoBasicUsage h2.md-subheader.md-sticky-clone {
+  margin-right: 0px;
+  margin-top: 0px;
+  box-shadow: 0px 2px 4px 0 rgba(0, 0, 0, 0.16); }
+.dialogdemoBasicUsage h2 .md-subheader-content {
+  padding-left: 10px; }
+  
+  .selectdemoBasicUsage p {
+  padding: 0 20px;
+  text-align: center; }
+.selectdemoBasicUsage p.md-caption {
+  color: #777; }
+.selectdemoBasicUsage .demo-content {
+  min-height: 348px; }
+  
+/*Radio buttons*/
+.radioButtondemoBasicUsage body {
+  padding: 20px; }
+.radioButtondemoBasicUsage hr {
+  margin-left: -20px;
+  opacity: 0.3; }
+.radioButtondemoBasicUsage md-radio-group {
+  width: 150px; }
+.radioButtondemoBasicUsage p:last-child {
+  padding-bottom: 50px; }
+.radioButtondemoBasicUsage [ng-controller] {
+  padding-left: 20px; }
+.radioButtondemoBasicUsage .radioValue {
+  margin-left: 5px;
+  color: #0f9d58;
+  font-weight: bold;
+  padding: 5px; }
+.radioButtondemoBasicUsage md-icon {
+  margin: 20px;
+  margin-top: 0;
+  width: 128px;
+  height: 128px; }

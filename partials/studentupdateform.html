@@ -1,0 +1,77 @@
+<md-toolbar>
+      <h2 class="md-toolbar-tools md-accent">
+        <span>Edit Student</span>
+      </h2>
+    </md-toolbar>
+<md-card>
+<md-input-container flex>
+        <label>Student Id</label>
+        <input type="text" ng-model="student.sid" required>
+      </md-input-container>
+      
+</md-card>
+<md-button class="md-raised md-primary" ng-click="fetchStudent(student.sid)">Fetch Details</md-button>
+<form name="bookForm" no-validate>
+<md-card>
+<md-input-container flex>
+        <label>Registration Date</label>
+        <input type="date" ng-model="student.registrationdate" required>
+      </md-input-container>
+      
+<div layout layout-sm="column">  
+<md-input-container flex>
+        <label>Name</label>
+        <input ng-model="student.name" required>
+      </md-input-container>
+</div>
+<div layout layout-sm="column">  
+<md-input-container flex>
+        <label>Address</label>
+        <textarea ng-model="student.address" md-maxlength="200"></textarea>
+      </md-input-container>
+</div>
+<div layout layout-sm="column">  
+<md-input-container flex>
+        <label>Email</label>
+        <input ng-model="student.email" >
+      </md-input-container>
+<md-input-container flex>
+        <label>Mobile Number</label>
+        <input ng-model="student.mobilenumber" >
+      </md-input-container>
+<md-input-container flex>
+        <label>Guardian Mobile Number</label>
+        <input ng-model="student.guardianmobilenumber" >
+      </md-input-container>
+      </div>
+ <div layout layout-sm="column">     
+ <p>Swipe Card Status: </p>     
+ <md-radio-group ng-model="student.swipecardstatus" class="md-primary">
+        <md-radio-button ng-repeat="d in swipestatus"
+                         ng-value="d.value"
+                         >
+            {{ d.label }}
+        </md-radio-button>
+    </md-radio-group>      
+</div>
+</md-card>
+<md-button class="md-raised md-primary" ng-click="updateStudent(student)">Save Details</md-button>
+<md-card>
+<md-toolbar>
+      <h2 class="md-toolbar-tools md-accent">
+        <span>Fees Details</span>
+      </h2>
+    </md-toolbar>
+<div layout layout-sm="column"> 
+<md-input-container flex>
+        <label>Total Fees</label>
+        <input ng-model="student.totalfees" >
+      </md-input-container>
+<md-input-container flex>
+        <label>Amount Paid</label>
+        <input ng-model="student.amountpaid" >
+      </md-input-container>
+</div>
+ </md-card>
+<md-button class="md-raised md-primary" ng-click="updateStudentFeesPayment(student)">Update Payment</md-button>
+</form>

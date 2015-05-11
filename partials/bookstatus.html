@@ -1,0 +1,18 @@
+<md-toolbar>
+      <h2 class="md-toolbar-tools md-accent">
+        <span>Check Book Status</span>
+      </h2>
+    </md-toolbar>
+<form name="checkBookStatusForm" >
+<md-card>
+	<md-card-content>
+		<h2>Enter Accession no.</h2>
+		<md-input-container flex>
+        <label> Accession No.</label>
+        <input ng-model="book.accessionno" placeholder="Enter Accession No">
+      </md-input-container>
+      <md-button class="md-raised md-primary" ng-click="checkStatus()">Check</md-button> 
+	</md-card-content>
+</md-card>
+
+</form>

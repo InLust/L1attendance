@@ -1,0 +1,64 @@
+<md-toolbar>
+      <h2 class="md-toolbar-tools md-accent">
+        <span>Book Types</span>
+      </h2>
+    </md-toolbar>
+<div layout="row">
+<div flex="33">
+<form name="languageForm" >
+<input type="hidden" ng-model="booktype.id" value="{{booktype.id}}">
+<md-card>
+	<md-card-content>
+		<h2>Book Types</h2>
+		<md-input-container flex>
+        <label> Type</label>
+        <input ng-model="booktype.label" booktypeholder="Enter Place">
+      </md-input-container>
+      <md-input-container>
+		  <label>Remarks</label>
+		  <textarea ng-model="booktype.remarks" md-maxlength="200"></textarea>
+		</md-input-container>
+		<md-button ng-show="!isEdit" class="md-raised md-primary" ng-click="addBookType()">Add</md-button> 
+		<md-button ng-show="isEdit" class="md-raised md-primary" ng-click="updateBookType()">Save</md-button>
+		<md-button ng-show="isEdit" class="md-raised md-default-theme" ng-click="cancelBookType()">Cancel</md-button>
+		
+	</md-card-content>
+</md-card>
+</form>
+</div>
+<div flex>
+<md-card>
+	<md-card-content>
+	<h2>Existing Book Types</h2>
+	<table flex>
+	<thead>
+		<th>Book Types</th>
+		<th>Date Created</th>
+		<th>Remarks</th>
+		<th>Action</th>
+	</thead>
+	<tbody>
+	<tr ng-repeat="booktype in booktypes">
+		<td>{{booktype.label}}</td>
+		<td>{{booktype.date}}</td>
+		<td>{{booktype.remarks}}</td>
+		<td><md-button class="md-fab button-medium md-primary" aria-label="Place" ng-click="editBookType(booktype)">
+      <md-tooltip>
+          Edit
+        </md-tooltip>
+            <md-icon icon="img/icons/0006-pencil.svg" class="icon-small"></md-icon>
+        </md-button>
+        <md-button class="md-fab button-medium md-warn" aria-label="Place" ng-click="removeBookType(booktype)">
+      <md-tooltip>
+          Remove
+        </md-tooltip>
+            <md-icon icon="img/icons/0268-minus.svg" class="icon-small"></md-icon>
+        </md-button>
+        </td>
+	</tr>
+	</tbody>
+	</table>
+	</md-card-content>
+</md-card>
+</div>
+</div>

@@ -1,0 +1,70 @@
+<md-toolbar>
+      <h2 class="md-toolbar-tools md-accent">
+        <span>Create Accession Register</span>
+      </h2>
+    </md-toolbar>
+<div layout="row">
+<div flex="33">
+<form name="accessRegisterForm" >
+<input type="hidden" ng-model="accessRegister.id" value="{{accessRegister.id}}">
+<md-card>
+	<md-card-content>
+		<h2>Add/Update Type</h2>
+		<md-input-container flex>
+        <label> Accession Register</label>
+        <input ng-model="accessRegister.label" placeholder="Enter Register Type">
+      </md-input-container>
+      <md-input-container flex>
+        <label> Starting Series</label>
+        <input ng-model="accessRegister.startseries" placeholder="Enter Starting Series">
+      </md-input-container>
+      <md-input-container>
+		  <label>Remarks</label>
+		  <textarea ng-model="accessRegister.remarks" md-maxlength="200"></textarea>
+		</md-input-container>
+		<md-button ng-show="!isEdit" class="md-raised md-primary" ng-click="addAccessRegister()">Add</md-button> 
+		<md-button ng-show="isEdit" class="md-raised md-primary" ng-click="updateAccessRegister()">Save</md-button>
+		<md-button ng-show="isEdit" class="md-raised md-default-theme" ng-click="cancelAccessRegister()">Cancel</md-button>
+		
+	</md-card-content>
+</md-card>
+</form>
+</div>
+<div flex>
+<md-card>
+	<md-card-content>
+	<h2>Existing Registers</h2>
+	<table flex>
+	<thead>
+		<th>Name</th>
+		<th>Starting Series</th>
+		<th>Date Created</th>
+		<th>Remarks</th>
+		<th>Action</th>
+	</thead>
+	<tbody>
+	<tr ng-repeat="accessRegister in accessRegisters">
+		<td>{{accessRegister.label}}</td>
+		<td>{{accessRegister.startseries}}</td>
+		<td>{{accessRegister.date}}</td>
+		<td>{{accessRegister.remarks}}</td>
+		<td><md-button class="md-fab button-medium md-primary" aria-label="Language" ng-click="editAccessRegister(accessRegister)">
+      <md-tooltip>
+          Edit
+        </md-tooltip>
+            <md-icon icon="img/icons/0006-pencil.svg" class="icon-small"></md-icon>
+        </md-button>
+        <md-button class="md-fab button-medium md-warn" aria-label="Language" ng-click="removeAccessRegister(accessRegister)">
+      <md-tooltip>
+          Remove
+        </md-tooltip>
+            <md-icon icon="img/icons/0268-minus.svg" class="icon-small"></md-icon>
+        </md-button>
+        </td>
+	</tr>
+	</tbody>
+	</table>
+	</md-card-content>
+</md-card>
+</div>
+</div>
