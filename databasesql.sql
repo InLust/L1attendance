@@ -1,3 +1,5 @@
+CREATE database l1attendance;
+USE l1attendance;
 CREATE TABLE `student_master_table` (
   `studentid` int(11) NOT NULL,
   `swipecardid` varchar(45) DEFAULT NULL,
